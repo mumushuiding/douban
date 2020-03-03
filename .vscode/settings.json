@@ -1,0 +1,4 @@
+{
+    "dart.enableCompletionCommitCharacters": true,
+    "dart.triggerSignatureHelpAutomatically": true
+}
