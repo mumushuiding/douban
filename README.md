@@ -6,15 +6,25 @@
 
 <a href="./doc/1.制作启动页面.md">1.制作启动页面</a>
 
+<img src="./doc/imgs/1.启动小部件.png">
+
 <a href="./doc/2.制作整个APP外面容器.md">2.制作整个APP外面容器</a>
+
+<img src="./doc/imgs/2.APP容器.png">
 
 <a href="./doc/3.HomePage主页制作.md">3.HomePage主页制作</a>
 
+<img src="./doc/imgs/3.3Home主页动态展示页.png">
+
 <a href="./doc/4.视频显示.md">4.视频显示</a>
+
+<img src="./doc/imgs/4.播放视频.png">
 
 <a href="./doc/5.添加路由.md">5.添加路由</a>
 
 <a href="./doc/6.远程API接口调用和搜索页面制作.md">6.远程API接口调用和搜索页面制作</a>
+
+<img src="./doc/imgs/6.远程API接口调用和搜索页面制作.png">
 
 未完待续。。
 
