@@ -1,7 +1,10 @@
 
 import 'dart:io';
+import 'application.dart';
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'routers/routers.dart';
 import 'views/splash/splash_widget.dart';
 
 void main() {
@@ -14,6 +17,11 @@ void main() {
 }
 
 class MyApp extends StatelessWidget{
+  MyApp(){
+    final router = new Router();
+    Routes.configureRoutes(router);
+    Application.router = router;
+  }
   @override
   Widget build(BuildContext context) {
     
@@ -32,7 +40,6 @@ class MyApp extends StatelessWidget{
 
 class RestartWidget extends StatefulWidget{
   final Widget child;
-
   RestartWidget({Key key, @required this.child}) : assert (child !=null), super(key:key);
 
   static restartApp(BuildContext context){

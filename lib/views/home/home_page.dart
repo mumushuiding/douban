@@ -1,12 +1,16 @@
+import 'dart:convert';
+
+import 'package:douban/application.dart';
+import 'package:douban/routers/routers.dart';
+
 import '../../http/mock_request.dart';
-import '../../router.dart';
 import '../../widgets/search_text_field_widget.dart';
 import '../../http/API.dart';
 import 'package:flutter/material.dart';
 import '../../model/subject.dart';
 import '../../constant/constant.dart';
 import '../../widgets/image/radius_img.dart';
-
+import '../../widgets/video_widget.dart';
 class HomePage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
@@ -27,32 +31,39 @@ DefaultTabController getWidget() {
             handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
             // SliverAppBar 待完善
             child: SliverAppBar(
+                // 固定在顶部
                 pinned: true,
-                expandedHeight: 120.0,
-                primary: true,
-                titleSpacing: 0.0,
-                backgroundColor: Colors.white,
-                flexibleSpace: FlexibleSpaceBar(  
+                snap: true,
+                floating: true,
+                expandedHeight: 100.0,
+                forceElevated: false,
+                titleSpacing: NavigationToolbar.kMiddleSpacing,
+                backgroundColor: Colors.green,
+                flexibleSpace: new FlexibleSpaceBar(  
                   collapseMode: CollapseMode.pin,
                   background: Container(
-                    color: Colors.green,
-                    child: SearchTextFieldWidget(
-                      hintText: '影视作品中你难忘的离别',
-                      margin: const EdgeInsets.only(left: 15.0, right: 15.0),
-                      onTab: () {
-                        Router.push(context, Router.searchPage, '影视作品中你难忘的离别');
-                      },
-                    ),
-                    alignment: Alignment(0.0, 0.0),
+                  color: Colors.green,
+                  child: SearchTextFieldWidget(
+                    hintText: '影视作品中你难忘的离别',
+                    margin: const EdgeInsets.only(left: 15.0, right: 15.0),
+                    onTab: () {
+                      // 必须重新编码
+                      var json = Uri.encodeComponent('影视作品中你难忘的离别');
+                      Application.router.navigateTo(context, '${Routes.searchPage}?searchHintContent=$json');
+                    },
                   ),
+                  alignment: Alignment(0.0, 0.0),
+                ),
                 ),
                 bottom: TabBar(
                   isScrollable: true,
+                  indicatorColor: Colors.white,
+                  unselectedLabelColor: Colors.black,
+                  labelColor: Colors.white,
                   tabs: _tabs
                     .map((String name) => Container(
                           child: Text(
                             name,
-                            style: TextStyle(color: Colors.black),
                           ),
                           padding: const EdgeInsets.only(bottom: 5.0),
                         ))
@@ -241,9 +252,13 @@ class _SliverContainerState extends State<SliverContainer>{
    }
 
    getContentVideo(int index) {
-     return Container(
-       child: Text('视频'),
-     );
+      if(!mounted){
+        return Container();
+      }
+      return VideoWidget(
+        index == 1 ? Constant.URL_MP4_DEMO_0 :  Constant.URL_MP4_DEMO_1,
+        showProgressBar: false,
+      );
    }
    getItemCenterImg(Subject item){
      return Row(
