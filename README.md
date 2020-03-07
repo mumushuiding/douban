@@ -1,7 +1,6 @@
 # 教你用Flutter一步步还原豆瓣APP
 
-代码参考： https://github.com/kaina404/FlutterDouBan，希望大家多给star
-
+代码部分参考： https://github.com/kaina404/FlutterDouBan
 <a href="./doc/0.准备工作.md">0.准备工作</a>
 
 <a href="./doc/1.制作启动页面.md">1.制作启动页面</a>
@@ -14,7 +13,7 @@
 
 <a href="./doc/3.HomePage主页制作.md">3.HomePage主页制作</a>
 
-<img  src="./doc/imgs/3.3Home主页动态展示页.png">
+<img width = 30% height = 30%  src="./doc/imgs/3.3Home主页动态展示页.png">
 
 <a href="./doc/4.视频显示.md">4.视频显示</a>
 
@@ -28,6 +27,8 @@
 
 
 <a href="./doc/7.个人页面.md">7.个人页面</a>
+
+<img  width = 30% height = 30% src="./doc/imgs/7.个人页面-书影音档案.png">
 
 未完待续。。
 
