@@ -1,7 +1,5 @@
-import 'package:douban/application.dart';
 import 'package:douban/http/API.dart';
 import 'package:douban/model/search_result.dart';
-import 'package:douban/routers/routers.dart';
 import 'package:douban/widgets/search_text_field_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
