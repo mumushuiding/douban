@@ -1,3 +1,20 @@
+class SubjectEntity {
+
+//  "subject":Object{...},
+//  "rank":1,
+//  "delta":0
+
+  Subject subject;
+  var rank;
+  var delta;
+
+  SubjectEntity.fromMap(Map<String, dynamic> map){
+    rank = map['rank'];
+    delta = map['delta'];
+    var subjectMap = map['subject'];
+    subject = Subject.fromMap(subjectMap);
+  }
+}
 class Subject {
   bool tag = false;
   Rating rating;
