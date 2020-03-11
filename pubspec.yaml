@@ -26,6 +26,8 @@ dependencies:
   cached_network_image:
   video_player:
   fluro:
+  shared_preferences:
+  palette_generator:
 dev_dependencies:
   flutter_test:
     sdk: flutter

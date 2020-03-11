@@ -1,3 +1,5 @@
+import 'package:douban/constant/color_constant.dart';
+import 'package:douban/constant/text_size_constant.dart';
 import 'package:flutter/material.dart';
 
 typedef OnClick = void Function();
@@ -14,8 +16,29 @@ class ItemCountTitle extends StatelessWidget{
   Widget build(BuildContext context) {
     
     return GestureDetector(
-      child: Container(
-        child: Text('itemcount title'),
+      onTap: (){
+        if (onClick != null ){
+          onClick();
+        }
+      },
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: Text(
+              title,
+              style: TextStyle(
+                fontSize: fontSize == null ? TextSizeConstant.BookAudioPartTabBar:fontSize,
+                fontWeight: FontWeight.bold,
+                color: ColorConstant.colorDefaultTitle
+              ),
+            ),
+          ),
+          Text(
+            '全部 ${count == null ? 0 : count} > ',
+            style: TextStyle(
+              fontSize: 12, color: Colors.grey,),
+          ),
+        ],
       ),
     );
   }
