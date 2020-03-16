@@ -80,7 +80,7 @@
 
 ## 1.11. 电影细节页面
 
-<a href="./doc/10.电影细节页面.md">
+<a href="./doc/10.电影细节页面.md">10.电影细节页面</a>
 
 <img width=20% height=20% src="./doc/imgs/10.电影细节页面.png">
 
